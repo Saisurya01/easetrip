@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                        "brand-blue": "#0f172a",
+                        "brand-blue-light": "#1e293b"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .glass-nav {
+            backdrop-filter: blur(8px);
+            background-color: rgba(15, 23, 42, 0.9);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- Sticky Navigation -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-brand-blue-light">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">flight_takeoff</span>
+<span class="text-white text-xl font-bold tracking-tight">TravelEase</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-200 hover:text-primary text-sm font-medium transition-colors" href="#">Flights</a>
+<a class="text-slate-200 hover:text-primary text-sm font-medium transition-colors" href="#">Hotels</a>
+<a class="text-slate-200 hover:text-primary text-sm font-medium transition-colors" href="#">Featured</a>
+<a class="text-slate-200 hover:text-primary text-sm font-medium transition-colors" href="#">My Bookings</a>
+</div>
+<div>
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-xl text-sm font-bold transition-all shadow-lg shadow-primary/20">
+                        Login
+                    </button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<div class="relative pt-16">
+<div class="h-[500px] w-full bg-cover bg-center flex items-center justify-center relative" data-alt="Aerial view of a passenger plane flying over clouds" style="background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCBns012BxLAkxvydAW1yX0C-i9jpf5HX7LI2xD1RtER9umdjbcUaaTbtaedxwWSw_KIoelQ-S5kNgUGP90-C6gd0NNncLM5VcOoQ3fdv4Re5DnDWg4dNRGxJswUGswC9wYbQkl5pZlwfilPQ6J6X-ibUaTTXCa9_aQ9q2iWW-lZTRmzmYe6vMWh8q90s-7tivCD2A0rmjzfPgE8B921FYlmK1ULWejwCyXAYGX9ll_rR45LoKXm4g4OG9VibH2QDYJyoRv_ZZdyIU');">
+<div class="text-center px-4 max-w-4xl">
+<h1 class="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight">Your Journey Begins Here</h1>
+<p class="text-lg md:text-xl text-slate-200 font-light">Explore the world's most beautiful destinations with exclusive deals.</p>
+</div>
+</div>
+<!-- Search Card -->
+<div class="max-w-6xl mx-auto px-4 -mt-32 relative z-10 pb-12">
+<div class="bg-white dark:bg-brand-blue-light rounded-2xl shadow-2xl p-6 md:p-8 border border-slate-100 dark:border-slate-700">
+<!-- Tabs -->
+<div class="flex gap-4 mb-8 border-b border-slate-100 dark:border-slate-700">
+<button class="pb-4 px-2 border-b-2 border-primary text-primary font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">flight</span> Flights
+                    </button>
+<button class="pb-4 px-2 border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-primary font-medium flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">hotel</span> Hotels
+                    </button>
+</div>
+<!-- Flight Search Form -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 items-end">
+<div class="lg:col-span-1">
+<label class="block text-xs font-bold text-slate-500 uppercase mb-2">From</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3.5 text-slate-400 text-xl">location_on</span>
+<input class="w-full pl-10 pr-4 py-3 bg-slate-50 dark:bg-brand-blue border-none rounded-xl focus:ring-2 focus:ring-primary text-sm" placeholder="Departure City" type="text"/>
+</div>
+</div>
+<div class="lg:col-span-1">
+<label class="block text-xs font-bold text-slate-500 uppercase mb-2">To</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3.5 text-slate-400 text-xl">flight_land</span>
+<input class="w-full pl-10 pr-4 py-3 bg-slate-50 dark:bg-brand-blue border-none rounded-xl focus:ring-2 focus:ring-primary text-sm" placeholder="Arrival City" type="text"/>
+</div>
+</div>
+<div class="lg:col-span-1">
+<label class="block text-xs font-bold text-slate-500 uppercase mb-2">Dates</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3.5 text-slate-400 text-xl">calendar_month</span>
+<input class="w-full pl-10 pr-4 py-3 bg-slate-50 dark:bg-brand-blue border-none rounded-xl focus:ring-2 focus:ring-primary text-sm" placeholder="Select Dates" type="text"/>
+</div>
+</div>
+<div class="lg:col-span-1">
+<label class="block text-xs font-bold text-slate-500 uppercase mb-2">Travellers</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3.5 text-slate-400 text-xl">group</span>
+<select class="w-full pl-10 pr-4 py-3 bg-slate-50 dark:bg-brand-blue border-none rounded-xl focus:ring-2 focus:ring-primary text-sm appearance-none">
+<option>1 Adult</option>
+<option>2 Adults</option>
+<option>Family</option>
+</select>
+</div>
+</div>
+<div class="lg:col-span-1">
+<label class="block text-xs font-bold text-slate-500 uppercase mb-2">Class</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-3.5 text-slate-400 text-xl">airline_seat_recline_extra</span>
+<select class="w-full pl-10 pr-4 py-3 bg-slate-50 dark:bg-brand-blue border-none rounded-xl focus:ring-2 focus:ring-primary text-sm appearance-none">
+<option>Economy</option>
+<option>Business</option>
+<option>First</option>
+</select>
+</div>
+</div>
+<div class="lg:col-span-1">
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/30 h-12">
+<span class="material-symbols-outlined">search</span>
+                            Search
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Why Choose Us -->
+<section class="py-16 bg-white dark:bg-brand-blue">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">sell</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Best Price Guaranteed</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">We offer the most competitive rates in the market for all your travel needs.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Secure Bookings</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Your data and payments are protected with industry-leading security protocols.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">support_agent</span>
+</div>
+<h3 class="text-xl font-bold mb-3">24/7 Support</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Our dedicated team is here to help you at every step of your journey.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Trips -->
+<section class="py-20 bg-background-light dark:bg-background-dark">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-3xl font-black mb-2">Featured Destinations</h2>
+<p class="text-slate-500 dark:text-slate-400">Hand-picked travel packages just for you</p>
+</div>
+<a class="text-primary font-bold hover:underline flex items-center gap-1" href="#">
+                    View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<div class="group bg-white dark:bg-brand-blue-light rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Tropical beach with turquoise water and palm trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd7VB8kDm3exOVFyvxjCEJy97OLqhIP1FYALFvMLB9SI2ysCXTwCST4-wDLIgPzKDzRUvp4RKjQEj6LOOaoEQ-bjkAyCYMtjENPMTJPCBO_n-W8yKwUCU4xmjSQzX55n-LJxAXfNQVb5f7eBvbikOZ_epMgYeeNkrGTnrjyvT7xTsJSfWWfM10RwpGeMqn-LZti0T8MtNVRqIzsxVJAgsFL7Lsuuv_VELQCE8eUHtWHByQkrrXLcsGuXn5heY5TXXlHbCXGaYJb0U"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-black text-brand-blue">
+                            TOP RATED
+                        </div>
+</div>
+<div class="p-5">
+<h3 class="font-bold text-lg mb-1">Maldives Escape</h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> 7 Days, 6 Nights
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-black text-xl">$1,299</span>
+<button class="p-2 bg-slate-50 dark:bg-brand-blue rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white dark:bg-brand-blue-light rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Traditional Japanese pagoda with cherry blossoms" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2Q4YQG3sm6llk2DibmsBfOKnybVZjs_J_v-r9JpTCxa8gF-WA4pGqLtoABdVXem7nlY0cbGH7fHcYX6-vILEy75qlFiUGXc90Zg5MLsdgfBQPL1cH4JyKEE1ODF7vkTErZpGvOzvrgUm9Y1SaiAPTvCpp06Sb1HDLTHuktfSxNp3u5l5Gt924QD584K2w7WguwoAMg9iKSAVW79ViZenynamyH8MXPdgGLdTCensUkXEYwUALzsnc7tK3CMnpQnSOWqzuDsueeZc"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-black text-brand-blue">
+                            DISCOUNTED
+                        </div>
+</div>
+<div class="p-5">
+<h3 class="font-bold text-lg mb-1">Kyoto Traditions</h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> 5 Days, 4 Nights
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-black text-xl">$850</span>
+<button class="p-2 bg-slate-50 dark:bg-brand-blue rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white dark:bg-brand-blue-light rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Eiffel Tower standing tall in Paris at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoiKugn6cFDaqu6SWrfdNyLVSox4xhFwnOasCQA6Ildh_jRQXq5Bt0xh0v4Q4RWOGr0V3pV-vswDCONhf5c5-0KZ_I8g79n6an7C0ZSAHzjBTmwU5TxpTC9xgCprYZvQpA6skimcftIzthlII8UIgdP98y_VL5xnBOs1JZiWy65CuAdK1Pi_wzPUnoKfuJZ5RZx4wkhPmTHQQYOBVzlVhQGQwtKUbv6ifhHDNXRez13jWyzsv6l4SRmlGio7LYzGOxVCqX06ImEcA"/>
+</div>
+<div class="p-5">
+<h3 class="font-bold text-lg mb-1">Parisian Nights</h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> 4 Days, 3 Nights
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-black text-xl">$640</span>
+<button class="p-2 bg-slate-50 dark:bg-brand-blue rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group bg-white dark:bg-brand-blue-light rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-slate-700">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Colorful houses on a cliff in Cinque Terre Italy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkm9qeqzX26mCBgwJ_h-93MDMCDAmXrfzIX6MvaaUiW4bQ03zlAgDD7kTpWxM7Y-CP4EvJdPXeVu2hGuysk4NyfwLwQsPlx4A69bbXX1W1k9AzCwPaFKTqtkPBbl0LUfrfOq3J9iz2PRnIo2HvcB97PTn4qzqP8WW_RATWFKc_J52NpAziNlZwtvnBCSX3BY0C6BpGq0nqKKOA1kpATZE-1x-SsI6BfrQzEpHYM4aO9E3FwrmtXks0Ue_RidZ8FUczIh00aA2U2uQ"/>
+</div>
+<div class="p-5">
+<h3 class="font-bold text-lg mb-1">Amalfi Coast</h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs mb-4 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> 6 Days, 5 Nights
+                        </p>
+<div class="flex items-center justify-between">
+<span class="text-primary font-black text-xl">$920</span>
+<button class="p-2 bg-slate-50 dark:bg-brand-blue rounded-lg group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-brand-blue text-slate-300 pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-12">
+<div>
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary text-2xl">flight_takeoff</span>
+<span class="text-white text-lg font-bold">TravelEase</span>
+</div>
+<p class="text-sm leading-relaxed mb-6">Making travel accessible and easy for everyone. Your dream destination is just a click away.</p>
+<div class="flex gap-4">
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Company</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Services</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Flight Booking</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Hotel Booking</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Holiday Packages</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Corporate Travel</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Contact</h4>
+<ul class="space-y-4 text-sm">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-1">call</span>
+<span>+1 (234) 567-890</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-1">mail</span>
+<span>hello@travelease.com</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-1">location_on</span>
+<span>123 Travel Way, San Francisco, CA</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+<p>© 2024 TravelEase Inc. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#">Privacy</a>
+<a class="hover:text-white transition-colors" href="#">Terms</a>
+<a class="hover:text-white transition-colors" href="#">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

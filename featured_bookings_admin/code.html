@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TravelEase Admin - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark hidden md:flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="bg-primary p-2 rounded-lg text-white">
+<span class="material-symbols-outlined block">explore</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">TravelEase</h1>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">map</span>
+<span class="font-medium">Featured Trips</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-medium">Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-medium">Users</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-medium">Reports</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-y-auto">
+<!-- Header -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md flex items-center justify-between px-8 sticky top-0 z-10">
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/50 placeholder:text-slate-500" placeholder="Search trips, users or bookings..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<div class="flex items-center gap-3 border-l border-slate-200 dark:border-slate-800 pl-4 ml-2">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-semibold">Alex Rivera</p>
+<p class="text-xs text-slate-500">Super Admin</p>
+</div>
+<img class="size-10 rounded-full object-cover" data-alt="Admin user profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNTvuiMLp-M37entPoQLageoMlPSg-iQm9TYqq4KcUgo_JHDS73ein2EHm9jfxLT48tEEY7gePolSyq6tmW4gf347uWB_-KdfUlVwBrkzG3uQdFtJE245ScMk4v3zlEzoxRnGLhUFX1zXXzW3IXM5dusHP0-Dt901lLRqfrnOZGkdQ-HC7Bgh-my6Cb12HnYQolSCKbN23X291UPXMsJUXU95dfzhiwyEwzvn0pDcDTreL_GsoJYQtD7AAJbe0Bqmh4mXE49b_r3A"/>
+</div>
+</div>
+</header>
+<div class="p-8 space-y-8">
+<!-- Page Title -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h2 class="text-3xl font-bold">Featured Trips</h2>
+<p class="text-slate-500">Manage promotional and curated travel packages</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-xl text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                            Filter
+                        </button>
+<button class="flex items-center gap-2 bg-primary text-white px-6 py-2 rounded-xl text-sm font-bold shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">add</span>
+                            Add New Trip
+                        </button>
+</div>
+</div>
+<!-- Featured Trips Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Trip Card 1 -->
+<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 group">
+<div class="relative h-48">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Tropical beach with turquoise water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxgdjv90IV0IMh7nh1JDC0c7gXd76M8brzR4sg2wMZPiPtM5VSZ-4nAS0YEhlpGLHgsP3tvsB7XFsqzNo45XaUefQ2yuSHNOVVwAXdGNwhDp9-HLgaEiNvmBZMVFgMjNCRKVbGP9olR-7jTZmDELU0U-HWgus94D5d1hf8fB-hdjjIlER0QqNNyyAUcSx5vM72iKQ6nosy2R3DR8snigINfx9uUA0iRh0r2VK3R8UF_w_PKFsrbilZeSo_4jT-5Svr3vzqgZpoo_Q"/>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-primary">BEACH</div>
+<div class="absolute top-4 right-4 flex gap-2">
+<button class="size-8 bg-white/90 dark:bg-slate-900/90 rounded-lg flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-primary"><span class="material-symbols-outlined text-sm">edit</span></button>
+<button class="size-8 bg-white/90 dark:bg-slate-900/90 rounded-lg flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-red-500"><span class="material-symbols-outlined text-sm">delete</span></button>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg">Bali Tropical Paradise</h3>
+<span class="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">Active</span>
+</div>
+<p class="text-slate-500 text-sm mb-4 line-clamp-2">Experience the magical sunsets and vibrant culture of the Island of Gods.</p>
+<div class="flex items-center justify-between text-sm font-semibold">
+<span class="text-slate-400 flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 7 Days</span>
+<span class="text-primary text-lg">$1,200</span>
+</div>
+</div>
+</div>
+<!-- Trip Card 2 -->
+<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 group">
+<div class="relative h-48">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Snowy peaks of the Swiss Alps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0ZSzzxbW8cPjpq79LHOkzJo2Gi6_OVLsZtpSR4p5AZisegj4fBLTCuFOu2BVxgZSLqTXh51OBN7N9040RwxhQcEcCvi8oeRhWomnI76YNYMQTtH6FjK-oxVOsuU91m7uMGL-VOSqwvFbNHEka4atEeE-7MzYdm1_PyOPpGSTKwNd_tsCb20tylB3Nd2guqgMfPUUUA_RSqeUhat2CcDaBoOEGH_gQvaxjAbK04-0dMYtE_4i8vIVkHpIpmP3aZ0CqHhMgXIPPKLs"/>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-primary">MOUNTAIN</div>
+<div class="absolute top-4 right-4 flex gap-2">
+<button class="size-8 bg-white/90 dark:bg-slate-900/90 rounded-lg flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-primary"><span class="material-symbols-outlined text-sm">edit</span></button>
+<button class="size-8 bg-white/90 dark:bg-slate-900/90 rounded-lg flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-red-500"><span class="material-symbols-outlined text-sm">delete</span></button>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg">Swiss Alps Adventure</h3>
+<span class="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">Active</span>
+</div>
+<p class="text-slate-500 text-sm mb-4 line-clamp-2">Breath-taking peaks, luxury ski resorts, and crystal-clear mountain lakes.</p>
+<div class="flex items-center justify-between text-sm font-semibold">
+<span class="text-slate-400 flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 5 Days</span>
+<span class="text-primary text-lg">$2,500</span>
+</div>
+</div>
+</div>
+<!-- Trip Card 3 -->
+<div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 group">
+<div class="relative h-48">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="White buildings in Santorini Greece" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0IiBBu9kbZ31ShRBAF4hSMj_fduQbG1fBIGkGnjkmgyqB8cdMEwEqgD3sHPFQDQmsITAq4gTQjuBoCjEz-sX5K_kDk6PASiEUc-swajDp3eobDszszJ_QDUHcvfj7-6zO-_GE8iDDA-jlW98T9dP3CvLXrawHzOJ4xgUeJys7_iEIjXHmHOXczGITiO5WmobSEz3r08wnTkLGQMo5QNXH5KjJDXJEMHp2Ng5Te-NUcPK3A4J4d1-TCNpigZfMRq0VWo2CqhJl31Q"/>
+<div class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-primary">COASTAL</div>
+<div class="absolute top-4 right-4 flex gap-2">
+<button class="size-8 bg-white/90 dark:bg-slate-900/90 rounded-lg flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-primary"><span class="material-symbols-outlined text-sm">edit</span></button>
+<button class="size-8 bg-white/90 dark:bg-slate-900/90 rounded-lg flex items-center justify-center text-slate-700 dark:text-slate-200 hover:text-red-500"><span class="material-symbols-outlined text-sm">delete</span></button>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-bold text-lg">Santorini Sunset</h3>
+<span class="bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">Draft</span>
+</div>
+<p class="text-slate-500 text-sm mb-4 line-clamp-2">Iconic whitewashed houses overlooking the deep blue Aegean sea.</p>
+<div class="flex items-center justify-between text-sm font-semibold">
+<span class="text-slate-400 flex items-center gap-1"><span class="material-symbols-outlined text-xs">schedule</span> 4 Days</span>
+<span class="text-primary text-lg">$1,800</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Bookings Table Section -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold">Recent Bookings</h3>
+<a class="text-primary text-sm font-bold hover:underline" href="#">View All Bookings</a>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-700">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Booking ID</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">User</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Trip Type</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Payment</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Date</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-700 dark:text-slate-300">#BK-9402</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary/20 rounded-full flex items-center justify-center text-primary text-xs font-bold">JD</div>
+<div class="text-sm">
+<p class="font-semibold">Jane Doe</p>
+<p class="text-xs text-slate-500">jane@example.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600 dark:text-slate-400">Premium Villa</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">
+<span class="font-bold text-slate-800 dark:text-slate-200">$1,450.00</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 py-1 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-xs font-bold">Confirmed</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">Oct 24, 2023</td>
+<td class="px-6 py-4 whitespace-nowrap text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-700 dark:text-slate-300">#BK-8311</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary/20 rounded-full flex items-center justify-center text-primary text-xs font-bold">MS</div>
+<div class="text-sm">
+<p class="font-semibold">Marco Silva</p>
+<p class="text-xs text-slate-500">msilva@traveler.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600 dark:text-slate-400">Mountain Trek</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">
+<span class="font-bold text-slate-800 dark:text-slate-200">$890.00</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 py-1 rounded-lg bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 text-xs font-bold">Pending</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">Oct 23, 2023</td>
+<td class="px-6 py-4 whitespace-nowrap text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-700/30 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-700 dark:text-slate-300">#BK-7112</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary/20 rounded-full flex items-center justify-center text-primary text-xs font-bold">LW</div>
+<div class="text-sm">
+<p class="font-semibold">Linda White</p>
+<p class="text-xs text-slate-500">linda.w@web.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-slate-600 dark:text-slate-400">City Tour</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm">
+<span class="font-bold text-slate-800 dark:text-slate-200">$320.00</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-2 py-1 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-xs font-bold">Cancelled</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">Oct 22, 2023</td>
+<td class="px-6 py-4 whitespace-nowrap text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-lg">more_horiz</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between">
+<p class="text-sm text-slate-500">Showing 3 of 48 bookings</p>
+<div class="flex gap-2">
+<button class="p-2 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-white dark:hover:bg-slate-800 disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="p-2 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-white dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

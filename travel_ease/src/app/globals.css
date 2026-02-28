@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 249, 250, 251;
+  --background-end-rgb: 255, 255, 255;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  color: rgb(17, 24, 39);
+  background: rgb(249, 250, 251);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none;
+    color: #111827 !important;
+    background-color: white !important;
+  }
+  
+  .input-field::placeholder {
+    color: #9ca3af !important;
+  }
+  
+  select.input-field {
+    color: #111827 !important;
+    background-color: white !important;
+  }
+  
+  select option {
+    color: #111827 !important;
+    background-color: white !important;
+  }
+  
+  input[type="date"] {
+    color: #111827 !important;
+    background-color: white !important;
+  }
+  
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.6;
+  }
+  
+  input[type="number"] {
+    color: #111827 !important;
+    background-color: white !important;
+  }
+  
+  input[type="text"] {
+    color: #111827 !important;
+    background-color: white !important;
+  }
+  
+  input[type="email"] {
+    color: #111827 !important;
+    background-color: white !important;
+  }
+  
+  input[type="tel"] {
+    color: #111827 !important;
+    background-color: white !important;
+  }
+  
+  input[type="password"] {
+    color: #111827 !important;
+    background-color: white !important;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow;
+  }
+  
+  label {
+    color: #374151 !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #111827 !important;
+  }
+  
+  p {
+    color: #374151 !important;
+  }
+  
+  span {
+    color: inherit;
+  }
+  
+  a {
+    color: #0284c7;
+  }
+  
+  .text-gray-900 {
+    color: #111827 !important;
+  }
+  
+  .text-gray-800 {
+    color: #1f2937 !important;
+  }
+  
+  .text-gray-700 {
+    color: #374151 !important;
+  }
+  
+  .text-gray-600 {
+    color: #4b5563 !important;
+  }
+  
+  .text-gray-500 {
+    color: #6b7280 !important;
+  }
+}

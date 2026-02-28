@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>TravelEase - Booking Confirmation</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between border-b border-primary/10 bg-white dark:bg-stone-900 px-4 md:px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-2 text-primary">
+<div class="size-8 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-2xl">flight_takeoff</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">TravelEase</h2>
+</div>
+<div class="flex flex-1 justify-end gap-4 md:gap-8 items-center">
+<nav class="hidden md:flex gap-6">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-semibold text-primary" href="#">My Bookings</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Explore</a>
+</nav>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-5xl mx-auto w-full p-4 md:p-8">
+<!-- Section 1: Confirmation Hero -->
+<div class="flex flex-col items-center text-center mb-12 animate-in fade-in duration-700">
+<div class="size-20 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mb-6 shadow-lg shadow-green-500/20">
+<span class="material-symbols-outlined text-5xl font-bold">check_circle</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-2">Booking Confirmed!</h1>
+<p class="text-slate-500 dark:text-slate-400 text-lg mb-8">We've sent your itinerary to your email address.</p>
+<!-- Summary Card -->
+<div class="w-full max-w-2xl bg-white dark:bg-stone-900 rounded-xl shadow-xl shadow-primary/5 border border-slate-100 dark:border-stone-800 overflow-hidden">
+<div class="md:flex">
+<div class="md:w-1/3 relative h-48 md:h-auto">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="The Eiffel Tower in Paris at sunset" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXVKsvzHL07tle-EFWSVfYsAwhgx1UQ3P_QOs_U54S31kE3LTubWl2GV2ufkbyhehBr5xCVKnPm1qwAPVjcCa2apmPPxKnI7RhP7-iHrXGGQ3NZWUsNqroD1Gl0Byipm7uTFmZ3nP0ni8pZ5aAnlMzzwfLsOzu2Gi97InemLTMeWV3wMrrOSRMJOO4xK6Zj5qR3FAUu8H_5voYSQcDxnF-ETaXjXQ_yJ8GVJ7spj4rH9bvJQQzkTfWZwmMyrVuaAxHajrAprI0iJc')"></div>
+</div>
+<div class="md:w-2/3 p-6 text-left flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 px-2 py-1 rounded">Round-Trip Flight</span>
+<span class="text-sm font-medium text-slate-400">#TE-98234</span>
+</div>
+<h3 class="text-xl font-bold mb-1">Paris Adventure</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Departure: Oct 24, 2023 • London Heathrow (LHR)</p>
+<div class="flex items-center gap-4 py-3 border-y border-slate-50 dark:border-stone-800">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm">group</span>
+<span class="text-sm font-medium">2 Adults</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm">luggage</span>
+<span class="text-sm font-medium">Included</span>
+</div>
+</div>
+</div>
+<div class="mt-6 flex flex-wrap gap-3">
+<button class="flex-1 bg-primary text-white font-bold py-3 px-6 rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-primary/25">
+                                        View Receipt
+                                    </button>
+<button class="flex-1 bg-slate-100 dark:bg-stone-800 font-bold py-3 px-6 rounded-xl hover:bg-slate-200 dark:hover:bg-stone-700 transition-all">
+                                        Manage
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div class="flex items-center gap-4 my-12">
+<h2 class="text-2xl font-bold whitespace-nowrap">My Bookings</h2>
+<div class="h-px w-full bg-slate-200 dark:bg-stone-800"></div>
+</div>
+<!-- Section 2: My Bookings List -->
+<div class="space-y-4 mb-20">
+<!-- Booking Item 1 -->
+<div class="bg-white dark:bg-stone-900 p-4 rounded-xl border border-slate-100 dark:border-stone-800 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:shadow-md transition-shadow">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+<span class="material-symbols-outlined">flight</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-0.5">
+<h4 class="font-bold">#TE-98234</h4>
+<span class="px-2 py-0.5 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-[10px] font-bold uppercase">Confirmed</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Flight to Paris • Oct 24, 2023</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="text-sm font-bold text-slate-500 dark:text-slate-400 px-4 py-2 hover:bg-slate-50 dark:hover:bg-stone-800 rounded-lg transition-colors">
+                                Details
+                            </button>
+<button class="text-sm font-bold text-red-500 dark:text-red-400 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/10 rounded-lg transition-colors">
+                                Cancel
+                            </button>
+</div>
+</div>
+<!-- Booking Item 2 -->
+<div class="bg-white dark:bg-stone-900 p-4 rounded-xl border border-slate-100 dark:border-stone-800 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:shadow-md transition-shadow">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-lg bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 flex items-center justify-center">
+<span class="material-symbols-outlined">hotel</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-0.5">
+<h4 class="font-bold">#TE-97112</h4>
+<span class="px-2 py-0.5 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-[10px] font-bold uppercase">Confirmed</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Grand Plaza Hotel, Paris • Oct 24 - 28, 2023</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="text-sm font-bold text-slate-500 dark:text-slate-400 px-4 py-2 hover:bg-slate-50 dark:hover:bg-stone-800 rounded-lg transition-colors">
+                                Details
+                            </button>
+<button class="text-sm font-bold text-red-500 dark:text-red-400 px-4 py-2 hover:bg-red-50 dark:hover:bg-red-900/10 rounded-lg transition-colors">
+                                Cancel
+                            </button>
+</div>
+</div>
+<!-- Booking Item 3 (Previous) -->
+<div class="bg-white/50 dark:bg-stone-900/50 p-4 rounded-xl border border-slate-100 dark:border-stone-800 flex flex-col md:flex-row md:items-center justify-between gap-4 opacity-70">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-lg bg-slate-100 dark:bg-stone-800 text-slate-400 flex items-center justify-center">
+<span class="material-symbols-outlined">directions_car</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-0.5">
+<h4 class="font-bold">#TE-85001</h4>
+<span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-stone-800 text-slate-500 text-[10px] font-bold uppercase">Completed</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Car Rental, Rome • Aug 12, 2023</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="text-sm font-bold text-primary px-4 py-2 hover:bg-primary/5 rounded-lg transition-colors">
+                                Book Again
+                            </button>
+</div>
+</div>
+</div>
+<!-- Promotion Banner -->
+<div class="bg-gradient-to-r from-primary to-orange-400 rounded-2xl p-8 text-white relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="text-2xl font-bold mb-2">Ready for your next trip?</h3>
+<p class="text-white/80 max-w-md mb-6">Discover exclusive deals on stays and experiences around the world.</p>
+<button class="bg-white text-primary font-bold px-6 py-3 rounded-xl hover:shadow-lg transition-all">
+                            Explore Destinations
+                        </button>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-[160px] opacity-10 rotate-12">explore</span>
+</div>
+</main>
+<!-- Footer -->
+<footer class="border-t border-slate-200 dark:border-stone-800 mt-12 bg-white dark:bg-stone-900 py-8 px-4">
+<div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-2 text-primary grayscale opacity-70">
+<span class="material-symbols-outlined">flight_takeoff</span>
+<span class="font-bold">TravelEase</span>
+</div>
+<p class="text-sm text-slate-400">© 2023 TravelEase Inc. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">language</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">help</span></a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
